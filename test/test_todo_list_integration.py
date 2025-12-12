@@ -57,7 +57,6 @@ def test_complete_when_there_is_not_complete_task():
 def test_length_of_complete_list_is_the_same_as_todo_list_after_give_up():
     todo = TodoList()
     todo_task = Todo('task')
-
     todo.add(todo_task.task_dict)
     todo_task = Todo('task')
     todo_task.mark_complete()
@@ -65,4 +64,4 @@ def test_length_of_complete_list_is_the_same_as_todo_list_after_give_up():
     todo_task = Todo('task')
     todo.add(todo_task.task_dict)
     todo.give_up()
-    len(todo.complete()) == len(todo.todo_list)
+    assert len(todo.complete()) == len(todo.todo_list)
